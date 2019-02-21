@@ -133,7 +133,7 @@ export default {
 <style scoped>
 .dt-head {
     margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
     height: 50px;
     background: #f7e36e;
     /* background: #282828; */
@@ -170,6 +170,10 @@ export default {
 
 .dt-menu-item:hover {
     color: #3273dc;
+}
+
+.dt-menu-item:target {
+    color: #fff;
 }
 
 

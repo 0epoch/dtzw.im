@@ -21,14 +21,10 @@
 export default {
     data() {
         return {
-            files: [],
-            pickedTag:'is-warning',
+            files: []
         };
     },
     props: {
-        tags_id: Array,
-        description: String,
-        data: String,
         url:String,
     },
     methods: {
@@ -81,11 +77,7 @@ export default {
         startUpload: function() {
 
             if(this.files.length <= 0) {
-                this.$notify.error({
-                    title: '错误',
-                    message: '请添加表情'
-                });return
-                // this.$message.error('请添加表情');return
+                alert('请上传表情图');return;
             }
 
             let formData = new FormData()
@@ -94,21 +86,17 @@ export default {
             });
 
             formData.append('data', this.data)
-            formData.append('tagsId', this.tagsId)
-            formData.append('description', this.description)
+            formData.append('tags_id', this.tags_id)
             
-            let uploadUrl = ''
-            if(this.uploadUrl) {
-                uploadUrl = this.uploadUrl
+            let url = ''
+            if(this.url) {
+                url = this.url
             } else {
-                uploadUrl = 'api/meme'
+                url = 'api/meme'
             }
-            this.$axios.post(uploadUrl, formData)
+            this.$axios.post(url, formData)
             .then( resp => {
-                this.$message({
-                    message: '发表成功',
-                    type: 'success'
-                })
+                alert('发表成功')
                 // window.location.href="/"
                 console.log(response.data);
             })

@@ -5,7 +5,7 @@
                 <input
                     class="input"
                     type="text"
-                    placeholder="输入评论..."
+                    placeholder="说两句..."
                     v-model="content"
                 >
             </p>

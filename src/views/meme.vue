@@ -1,6 +1,6 @@
 <template>
     <div class="dt-box meme-form">
-        <div class="field">
+        <!-- <div class="field">
             <label class="label">描述</label>
             <div class="control">
                 <input
@@ -10,13 +10,12 @@
                     v-model="description"
                 >
             </div>
-        </div>
+        </div> -->
 
         <div class="field">
             <label class="label">上传表情</label>
             <upload
                 :tags_id="tags_id"
-                :description="description"
             ></upload>
         </div>
         <div class="field">
@@ -64,7 +63,6 @@ export default {
         return {
             tags: "",
             tags_id: [],
-            description: "",
             keyword: ""
         };
     },
